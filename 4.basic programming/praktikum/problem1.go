@@ -1,10 +1,12 @@
 package main
 
-func main() {
-	// input
-	T := 20.0
-	r := 4.0
+import "fmt"
 
-	// kode disini
+func main() {
+	// luas permuakaan tabung
+	T := 20
+	r := 4
+	Lp := 2 * π * r(r+T)
+	fmt.Println(Lp)
 
 }
