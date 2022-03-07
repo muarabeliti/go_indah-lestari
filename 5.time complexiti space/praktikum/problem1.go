@@ -1,14 +1,15 @@
-package main 
+package main
 
 import (
 	"fmt"
-	"match"
+	"math"
 )
+
 func primeNumber(n float64) bool {
 	//variable
 	var condition bool = true
-	max_divisor := math Floor(math.Sqrt(n))
-	toInt :=int (n)
+	max_divisor := math.Floor(math.Sqrt(n))
+	toInt := int(n)
 	//jika n == 1 bukan prima
 	if n == 1 {
 		condition = false
@@ -22,17 +23,17 @@ func primeNumber(n float64) bool {
 	}
 	return condition
 }
-func main () {
+func main() {
 
- number := 100000007.0
- hasil := ""
+	number := 100000007.0
+	hasil := ""
 
- if primeNumber(number) == true {
-	 hasil = "Bilangan Prima"
- } else {
-	 hasil = "Bukan Bilangan Prima"
- }
+	if primeNumber(number) == true {
+		hasil = "Bilangan Prima"
+	} else {
+		hasil = "Bukan Bilangan Prima"
+	}
 
-    fmt.Println("Angka",int(number), "adalah",hasil)
+	fmt.Println("Angka", int(number), "adalah", hasil)
 
 }
