@@ -1,0 +1,4 @@
+variabel digunakan untuk menyimpan informasi dalam program komputer ,variabel menyediakan cara pelabelan data dengan nama deskriptif dan memiliki tipe tanggal (boolean,numerik,string)
+tipe data dalam golang terdapat boolean yang terbagi menjadi dua bagian yaitu true and false untuk tipe data numerik itu terbagi menjadi tiga bagian yaitu integer,float,complex dan yang terakhit tipe data string
+type declaration ad dua bagian ada long dan short
+struktur control hanya ada beberapa struktur controldi Go untuk percabangan yang digunakan jika beralih untuk menulis perulangan kita menggunakan kata kunci for
