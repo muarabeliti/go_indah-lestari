@@ -1,0 +1,4 @@
+APA ITU ARRAY? Array adalah struktur data yang berisi sekelompok elemen, dapat berisi satu jenis variabel dengan ukuran alokasi tetap. Tipe data yang berbeda dapat ditangani sebagai elemen dalam array seperti Numerik, String, Boolean.
+DEKLARASI ARRAY Untuk mendeklarasikan aholy grow perlu menentukan tanda kurung diikuti dengan jenis elemennya
+APA ITU SLICE? Slice adalah struktur data yang berisi sekelompok elemen, dapat berisi satu jenis variabel (seperti Array) tetapi memiliki ukuran alokasi dinamis, slice dinyatakan seperti sebuah array kecuali jika tidak menyebut apa pun dalam kurung [].
+mengguna keyword untuk membuat() func make([]T, len, cap) []T make() mengizinkan kita untuk mengerjakan slice ketika array yang mendasar tidak di tentukan.
