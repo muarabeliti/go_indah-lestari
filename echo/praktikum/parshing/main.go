@@ -11,9 +11,13 @@ func main() {
 	fmt.Println("saya indah lestari.")
 
 	e := echo.New()
-	e.Any("/", func(c echo.Context) error {
+	e.POST("/", func(ctx echo.Context) error {
 
-		return c.JSON(http.StatusOK, "saya indah lestari")
+		name := ctx.Param("hello")
+		message := ctx.Param("indah")
+
+		return ctx.String(http.StatusOK, "Hello saya indah lestari")
+
 	})
 	e.Start(":1000")
 }
