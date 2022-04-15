@@ -1,0 +1,13 @@
+CREATE TABLE IF NOT EXISTS product(
+    id INT NOT NULL AUTO_INCREMENT,
+    code VARCHAR(255) NOT NULL,
+    product_type_id INT NOT NULL,
+    name VARCHAR(255) NOT NULL,
+    description VARCHAR(255) NOT NULL,
+    price DECIMAL(9,2) NOT NULL,
+    qty INT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    PRIMARY KEY ( id ),
+    FOREIGN KEY (product_type_id) REFERENCES product_type(id)
+);

@@ -1,0 +1,149 @@
+definitions:
+  dto.Response:
+    properties:
+      data: {}
+      error:
+        type: string
+      status:
+        type: boolean
+    type: object
+  dto.TodoParam:
+    properties:
+      name:
+        example: Eat Breakfast
+        maxLength: 255
+        type: string
+    required:
+    - name
+    type: object
+  dto.UserRegisterParam:
+    properties:
+      email:
+        example: louisaldorio@gmail.com
+        maxLength: 255
+        type: string
+      name:
+        example: Louis Aldorio
+        maxLength: 255
+        minLength: 5
+        type: string
+      password:
+        example: "12345"
+        minLength: 4
+        type: string
+    required:
+    - email
+    - name
+    - password
+    type: object
+info:
+  contact: {}
+  title: Swagger Example API
+  version: "1.0"
+paths:
+  /api/todos:
+    get:
+      consumes:
+      - application/json
+      description: Get All todo attached to logged in user, return list of todos
+      parameters:
+      - description: Authorization
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/dto.Response'
+        "401":
+          description: ""
+        "500":
+          description: ""
+      summary: Get All todo attached to logged in user
+      tags:
+      - todos
+    post:
+      consumes:
+      - application/json
+      description: Create New todo that add to todo list
+      parameters:
+      - description: Authorization
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: todo data
+        in: body
+        name: AdminData
+        required: true
+        schema:
+          $ref: '#/definitions/dto.TodoParam'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/dto.Response'
+        "500":
+          description: ""
+      summary: Create New Todo
+      tags:
+      - todos
+  /api/todos/{id}:
+    get:
+      consumes:
+      - application/json
+      description: Get certain todo by id
+      parameters:
+      - description: Authorization
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: Todo ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: ""
+        "500":
+          description: ""
+      summary: Get certain todo by id
+      tags:
+      - todos
+  /api/user/register:
+    post:
+      consumes:
+      - application/json
+      description: Register new user to the system
+      parameters:
+      - description: User registration Data
+        in: body
+        name: AdminData
+        required: true
+        schema:
+          $ref: '#/definitions/dto.UserRegisterParam'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/dto.Response'
+        "401":
+          description: ""
+        "500":
+          description: ""
+      summary: Register New User
+      tags:
+      - user
+swagger: "2.0"
