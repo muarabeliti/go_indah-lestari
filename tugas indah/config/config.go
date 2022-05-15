@@ -4,6 +4,8 @@ import (
 	// "fmt"
 	// "indah_cantik/model"
 
+	"indah_cantik/model"
+
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 )
@@ -56,7 +58,7 @@ func InitDB() {
 
 }
 
-// func InitMigrate() {
-// 	DB:= InitDB()
-// 	DB.AutoMigrate(&model.User{}, &model.Product{})
-// }
+func InitMigrate() {
+	InitDB()
+	DB.AutoMigrate(&model.User{}, &model.Product{})
+}

@@ -22,9 +22,9 @@ func SetEnv() {
 
 	os.Setenv("DB_HOST", "127.0.0.1")
 	os.Setenv("DB_PORT", "3306")
-	os.Setenv("DB_DATABASE", "golangapp-backend")
-	os.Setenv("DB_USERNAME", "golangapp")
-	os.Setenv("DB_PASSWORD", "golangapp123")
+	os.Setenv("DB_DATABASE", "golang")
+	os.Setenv("DB_USERNAME", "root")
+	os.Setenv("DB_PASSWORD", "")
 
 	os.Setenv("SENTRY", "https://examplePublicKey@o0.ingest.sentry.io/0")
 	os.Setenv("ENV", "development")

@@ -6,6 +6,9 @@ import (
 	"indah_cantik/routes"
 )
 
+func init() {
+	config.InitMigrate()
+}
 func main() {
 	config.InitDB()
 	e := routes.New()

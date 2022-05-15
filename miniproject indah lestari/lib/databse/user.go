@@ -39,11 +39,22 @@ func GetDetailUser(userId int) (interface{}, error) {
 // 	return user, nil
 // }
 
-func Login(email, password string) (*model.User, error) {
-	var  model.User
 
-	if err := config.DB.Where("email =? AND Password =?", email, password).First(&user).Error; err != nil {
-		return &model.User{}, err
+
+func Login(username string) (string, error) {
+	var  err error
+
+	if err = config.DB.Where("email =? AND Password =?", user.Email, password).First(&user).Error; err != nil {
+		return &string{}, err
 	}
 	return &user, nil
 }
+
+//func Login(email, password string) (*model.User, error) {
+//	var  model.User
+
+//	if err := config.DB.Where("email =? AND Password =?", email, password).First(&user).Error; err != nil {
+//		return &model.User{}, err
+//	}
+//	return &user, nil
+/}

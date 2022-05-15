@@ -19,7 +19,6 @@ func init() {
 	migrations.RunMigrate()
 }
 
-
 // @title           Swagger Example API
 // @version         1.0
 func main() {
